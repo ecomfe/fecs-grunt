@@ -1,27 +1,28 @@
 {
-  "name": "grunt-fecs",
+  "name": "fecs-grunt",
   "description": "fecs for grunt",
   "version": "0.1.0",
-  "homepage": "https://github.com/Fental/grunt-fecs",
-  "author": "fental <fengeeker@gmail.com> (http://fental.github.io/Fental/)",
+  "homepage": "https://github.com/ecomfe/fecs-grunt",
+  "author": "fental <fengeeker@gmail.com> ",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Fental/grunt-fecs.git"
+    "url": "git://github.com/ecomfe/fecs-grunt.git"
   },
   "bugs": {
-    "url": "https://github.com/Fental/grunt-fecs/issues"
+    "url": "https://github.com/ecomfe/fecs-grunt/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/Fental/grunt-fecs/blob/master/LICENSE-MIT"
+      "url": "https://github.com/ecomfe/fecs-grunt/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "lint": "fecs tasks",
+    "test": "npm run lint && grunt test"
   },
   "dependencies": {
     "fecs": "^0.4.1"
