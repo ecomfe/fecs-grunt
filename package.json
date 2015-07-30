@@ -2,8 +2,8 @@
   "name": "fecs-grunt",
   "description": "fecs for grunt",
   "version": "0.1.0",
-  "homepage": "",
-  "author": "fental <fengeeker@gmail.com> (http://fental.github.io/Fental/)",
+  "homepage": "https://github.com/ecomfe/fecs-grunt",
+  "author": "fental <fengeeker@gmail.com> ",
   "repository": {
     "type": "git",
     "url": "git://github.com/ecomfe/fecs-grunt.git"
@@ -21,7 +21,8 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "lint": "fecs tasks",
+    "test": "npm run lint && grunt test"
   },
   "dependencies": {
     "fecs": "^0.4.1"
