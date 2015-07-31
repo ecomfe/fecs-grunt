@@ -1,9 +1,6 @@
-/*
- * fecs
- * https://github.com/Fental/grunt-fecs
- *
- * Copyright (c) 2015 fental
- * Licensed under the MIT license.
+/**
+ * @file fecs grunt plugin
+ * @author Fental<fengeeker@gmail.com>
  */
 'use strict';
 
@@ -32,6 +29,7 @@ module.exports = function (grunt) {
         });
 
         var done = function () {
+            /* eslint-disable no-console */
             console.timeEnd(fecs.leadName);
             async(true);
         };
