@@ -14,7 +14,7 @@ npm install fecs-grunt --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-fecs');
+grunt.loadNpmTasks('fecs-grunt');
 ```
 
 ## The "fecs" task
