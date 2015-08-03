@@ -97,6 +97,24 @@ grunt.initConfig({
         }
     },
 });
+
+// 或者
+grunt.initConfig({
+    fecs: {
+        options: {
+            command: 'format',
+            replace: true
+
+            // 其他属性参考check options
+        },
+        files: {
+            src: [
+                './test/input/*'
+            ]
+        }
+    },
+});
+
 ```
 
 #### Check && Format

@@ -16,13 +16,16 @@ module.exports = function (grunt) {
             ],
             options: {
                 jshintrc: '.jshintrc'
+
             }
+
         },
         // Before generating any new files, remove any previously-created files.
         clean: {
             tests: [
                 './test/output'
             ]
+
         },
         // Configuration to be run (and then tested).
         fecs: {
@@ -33,7 +36,6 @@ module.exports = function (grunt) {
                     command: 'check',
                     rule: true,
                     reporter: 'baidu',
-
                     // 使用ignore时不得指定files的src，命令行的fecs不支持fecs check [文件模式] --ignore [文件名]
                     // 如果要ignore多个文件，ignore的值为数组
                     // ignore: 'test/input/index.html',
@@ -41,9 +43,9 @@ module.exports = function (grunt) {
                     sort: true,
                     // 支持type: 'html'
                     type: 'html, css, js'
-
                     // 不支持的属性
                     // debug, stream, silent
+
                 },
                 files: {
                     // 可在这里指定check的源文件，支持简易模式
@@ -51,41 +53,54 @@ module.exports = function (grunt) {
                     // 也支持文件数组格式，详见grunt官网文件配置
                     // 然而不需要dest，没有files字段或者没有src字段都是默认全部扫描
                     src: [
-                        './test/input/*'
+                        './test/input/js/success.js'
                     ]
+
                 }
+
             },
             format: {
                 options: {
                     command: 'format',
+                    // 支持这两个属性
                     output: './test/output'
+                    // replace: true
 
                     // 其他属性参考check options
+
                 },
                 files: {
                     src: [
                         './test/input/*'
                     ]
+
                 }
+
             },
             formatUseReplace: {
                 options: {
                     command: 'format',
                     replace: true
+
                 },
                 files: {
                     src: [
                         './test/input2/*'
                     ]
+
                 }
+
             }
+
         },
         // Unit tests.
         nodeunit: {
             tests: [
                 'test/*_test.js'
             ]
+
         }
+
     });
 
     // Actually load this plugin's task(s).

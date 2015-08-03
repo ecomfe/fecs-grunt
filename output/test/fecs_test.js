@@ -37,11 +37,9 @@ exports.fecs = {
         test.expect(0);
         // var file = [path.join(input, 'js/success.js')];
 
-
         // var actual = grunt.file.read('tmp/default_options');
         // var expected = grunt.file.read('test/expected/default_options');
         // test.equal(actual, expected, 'should describe what the default behavior is.');
-
         test.done();
     },
     format: function (test) {
@@ -58,7 +56,6 @@ exports.fecs = {
         test.done();
     },
     formatUseReplace: function (test) {
-
         var files = fs.readdirSync('test/input2');
         var len = files.length;
 
@@ -71,4 +68,5 @@ exports.fecs = {
 
         test.done();
     }
+
 };
