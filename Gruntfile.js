@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 
                     // 使用ignore时不得指定files的src，命令行的fecs不支持fecs check [文件模式] --ignore [文件名]
                     // 如果要ignore多个文件，ignore的值为数组
-                    ignore: 'test/input/index.html',
+                    // ignore: 'test/input/index.html',
 
                     sort: true,
                     // 支持type: 'html'
@@ -58,15 +58,24 @@ module.exports = function (grunt) {
             format: {
                 options: {
                     command: 'format',
-                    // 支持这两个属性
                     output: './test/output'
-                    // replace: true
 
                     // 其他属性参考check options
                 },
                 files: {
                     src: [
                         './test/input/*'
+                    ]
+                }
+            },
+            formatUseReplace: {
+                options: {
+                    command: 'format',
+                    replace: true
+                },
+                files: {
+                    src: [
+                        './test/input2/*'
                     ]
                 }
             }
@@ -91,7 +100,8 @@ module.exports = function (grunt) {
     // plugin's task(s), then test the result.
     grunt.registerTask('test', [
         'clean',
-        'fecs'
+        'fecs',
+        'nodeunit'
     ]);
 
     // By default, lint and run all tests.
