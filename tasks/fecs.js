@@ -17,16 +17,15 @@ module.exports = function (grunt) {
         // 在默认参数的基础上修改参数
         var options = this.options(fecs.getOptions([]));
 
-        // 还是得检查一下文件的合理性，虽然fecs不存在的文件会提示检查成功。。。
-        // grunt 会自己过滤src字段
+        // grunt 会自己过滤src字段。
+        // 配置项中的 src 字段的 glob pattern grunt会自动处理，若模式找到匹配内容，this.filesSrc 则是相应匹配内容的数组
+        // 如果没有找到匹配内容，this.filesSrc 则是空数组
         var file = this.filesSrc;
         if (file.length === 0) {
             grunt.log.error('0 files linted. Please check your src patten.');
             return;
         }
-        file.forEach(function (filepath) {
-            options._.push(filepath);
-        });
+        options._ = options._.concat(file);
 
         var done = function () {
             /* eslint-disable no-console */
