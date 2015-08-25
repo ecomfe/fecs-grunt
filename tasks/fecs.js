@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 
         var fecs = require('fecs');
         // 在默认参数的基础上修改参数
-        var options = this.options(fecs.getOptions([]));
+        var options = this.options(fecs.getOptions());
 
         // grunt 会自己过滤src字段。
         // 配置项中的 src 字段的 glob pattern grunt会自动处理，若模式找到匹配内容，this.filesSrc 则是相应匹配内容的数组
