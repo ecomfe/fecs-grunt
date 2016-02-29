@@ -15,18 +15,17 @@ module.exports = function (grunt) {
 
         var fecs = require('fecs');
         // 在默认参数的基础上修改参数
-        var options = this.options(fecs.getOptions([]));
+        var options = this.options(fecs.getOptions());
 
-        // 还是得检查一下文件的合理性，虽然fecs不存在的文件会提示检查成功。。。
-        // 后期加吧
-        // 不支持filter，因为文件是通过fecs使用流来搞定。。。
-        // 所以 拼接src就行了。
-        // 接受files字段是为了能够check、format指定的文件
-        this.files.forEach(function (f) {
-            var tmp = [];
-            tmp = options._.concat(f.src);
-            options._ = tmp;
-        });
+        // grunt 会自己过滤src字段。
+        // 配置项中的 src 字段的 glob pattern grunt会自动处理，若模式找到匹配内容，this.filesSrc 则是相应匹配内容的数组
+        // 如果没有找到匹配内容，this.filesSrc 则是空数组
+        var file = this.filesSrc;
+        if (file.length === 0) {
+            grunt.log.error('0 files linted. Please check your src patten.');
+            return;
+        }
+        options._ = options._.concat(file);
 
         var done = function () {
             /* eslint-disable no-console */

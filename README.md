@@ -48,27 +48,22 @@ grunt.initConfig({
     fecs: {
         options: {
             // 支持的属性，全部配置属性均使用全称
-            // command, color, ignore, reporter, rule, sore, type
+            // command, color, reporter, rule, sore, type
             command: 'check',
             rule: true,
             reporter: 'baidu',
-
-            // 使用ignore时不得指定files的src，命令行的fecs不支持fecs check [文件模式] --ignore [文件名]
-            // 如果要ignore多个文件，ignore的值为数组
-            ignore: 'test/input/index.html',
 
             sort: true,
             // 支持type: 'html'
             type: 'html, css, js'
 
             // 不支持的属性
-            // debug, stream, silent
+            // debug, stream, silent, ignore
         },
         files: {
             // 可在这里指定check的源文件，支持简易模式
             // src: ['./test/input/index.html']
             // 也支持文件数组格式，详见grunt官网文件配置
-            // 然而不需要dest，没有files字段或者没有src字段都是默认全部扫描
             src: [
                 './test/input/*'
             ]
@@ -132,7 +127,6 @@ grunt.initConfig({
                 // src: ['./test/input/index.html']
                 // 也支持文件数组格式，详见grunt官网文件配置
                 // 然而不需要dest
-                // 没有files字段或者没有src字段都是默认全部扫描
                 src: [
                     './test/input/*'
                 ]
