@@ -22,10 +22,13 @@
   },
   "scripts": {
     "lint": "fecs tasks Gruntfile.js test/fecs_test.js",
-    "test": "npm run lint && grunt test"
+    "test": "npm run lint && grunt test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "fecs": "*"
+    "fecs": "*",
+    "snyk": "^1.31.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.9.2",
@@ -43,5 +46,6 @@
   "directories": {
     "test": "test"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
